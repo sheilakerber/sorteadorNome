@@ -10,11 +10,15 @@
         ' se tudo estiver preenchido, cria o array nomes e guarda os inputs do usuario
         Dim nomes As Object = {txtNome1.Text, txtNome2.Text, txtNome3.Text, txtNome4.Text, txtNome5.Text}
 
-        ' sorteia um index do array
-        Dim nomeSorteado As Integer = CInt(Int(5 * Rnd() + 1))
+        ' sorteia um index do array    antes:Dim nomeSorteado As Integer = CInt(Int(5 * Rnd() + 1))
+        ' utilinzando a funcao random
+        Dim indexSorteado As Integer
+        Dim nomeSorteado As New Random
+
+        indexSorteado = nomeSorteado.Next(0, 5)
 
         ' apresenta na tela o nome correspondente ao index sorteado
-        MsgBox("Nome sorteado: " & nomes(nomeSorteado))
+        MsgBox("Nome sorteado: " & nomes(indexSorteado))
 
         'limpa os campos
         txtNome1.Text = Nothing
